@@ -1,0 +1,267 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Business Application",
+  "type": "object",
+  "description": "Meta schema for Business Application",
+  "properties": {
+    "Owner": {
+      "type": "string",
+      "title": "Owner",
+      "description": "Owner of the Application, The Technical Contact",
+      "$extension": {
+        "presentation": {
+          "isModifiable": true,
+          "htmlElement": "userSearchControl"
+        },
+        "persona": "Technical Contact"
+      }
+    },
+    "Application Lifecycle Status": {
+      "type": "string",
+      "title": "IAM Status",
+      "description": "IAM status of the Application in the organization.",
+      "enum": [
+        "Pending",
+        "Enrolled",
+        "Decommissioned"
+      ],
+      "$extension": {
+        "presentation": {
+          "isModifiable": true
+        }
+      }
+    },
+    "Assess Security Compliance": {
+      "type": "boolean",
+      "title": "Assess Security Compliance",
+      "description": "This field indicates whether the Security Compliance Assessment is required.",
+      "$extension": {
+        "presentation": {
+          "isModifiable": true
+        }
+      }
+    },
+    "Allow Compliance Automation": {
+      "type": "boolean",
+      "title": "Allow Compliance Automation",
+      "description": "This field indicates whether automated Assessment or Inspection is allowed for the Applicable Security Controls.",
+      "$extension": {
+        "presentation": {
+          "isModifiable": true
+        }
+      }
+    },
+    "Risk Level": {
+      "type": "string",
+      "title": "Risk Level",
+      "description": "Risk Level of the Application.",
+      "$extension": {
+        "presentation": {
+          "isModifiable": true
+        }
+      }
+    },
+    "Application Admin": {
+      "type": "string",
+      "title": "Application Admin",
+      "description": "Admin of the Application",
+      "$extension": {
+        "presentation": {
+          "isModifiable": true,
+          "htmlElement": "userSearchControl"
+        },
+        "persona": "Application Admin"
+      }
+    },
+    "PROD Group": {
+      "type": "string",
+      "title": "PROD Group",
+      "description": "Groups for Prod env.",
+      "$extension": {
+        "presentation": {
+          "isModifiable": true
+        },
+        "persona": "PROD Group"
+      }
+    },
+    "QA Group": {
+      "type": "string",
+      "title": "QA Group",
+      "description": "Groups for QA env.",
+      "$extension": {
+        "presentation": {
+          "isModifiable": true
+        },
+        "persona": "QA Group"
+      }
+    },
+    "Security Assessment Inspector": {
+      "type": "string",
+      "title": "Security Assessment Inspector",
+      "description": "Default Inspector",
+      "$extension": {
+        "presentation": {
+          "isModifiable": true,
+          "htmlElement": "userSearchControl"
+        },
+        "persona": "Security Assessment Inspector"
+      }
+    },
+    "SSO Verified": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "title": "SSO Verified",
+      "description": "This is field indicate whether or not Application is SSO Verified",
+      "$extension": {
+        "presentation": {
+          "isModifiable": true
+        }
+      }
+    },
+    "SSO Bypass Detected": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "title": "SSO Bypass Detected",
+      "description": "This is field indicate if SSO Bypass is Detected",
+      "$extension": {
+        "presentation": {
+          "isModifiable": true
+        }
+      }
+    },
+    "MFA Verified": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "title": "MFA Verified",
+      "description": "This is field indicate whether or not Application is MFA Verified",
+      "$extension": {
+        "presentation": {
+          "isModifiable": true
+        }
+      }
+    },
+    "MFA Bypass Detected": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "title": "MFA Bypass Detected",
+      "description": "This is field indicate if MFA Bypass is Detected",
+      "$extension": {
+        "presentation": {
+          "isModifiable": true
+        }
+      }
+    },
+    "Parent Id": {
+      "type": "string",
+      "title": "Parent Id",
+      "description": "Parent id of the given Business Application.",
+      "$extension": {
+        "presentation": {
+          "isModifiable": true
+        }
+      }
+    },
+    "Is Sub-Component": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "title": "Is Sub-Component",
+      "description": "This field indicates whether the Application is a sub-component. The value is FALSE if the Application does not have any parent CAMR. This Control is applicable ONLY for “Root” Application (not sub-components in CMDB)",
+      "$extension": {
+        "presentation": {
+          "isModifiable": true
+        }
+      }
+    }
+  },
+  "required": [
+    "Application Lifecycle Status",
+    "Owner"
+  ],
+  "$extension": {
+    "trustedAttributes": [
+      "Application Status",
+      "Owner",
+      "Risk Level",
+      "SSO Verified",
+      "MFA Verified",
+      "MFA Bypass Detected",
+      "SSO Bypass Detected"
+    ],
+    "allowedPatchOps": {
+      "Owner": [
+        "PUT",
+        "POST"
+      ],
+      "Application Lifecycle Status": [
+        "PUT",
+        "POST"
+      ],
+      "Assess Security Compliance": [
+        "PUT",
+        "POST"
+      ],
+      "Allow Compliance Automation": [
+        "PUT",
+        "POST"
+      ],
+      "Risk Level": [
+        "PUT",
+        "POST"
+      ],
+      "Technical Contact": [
+        "PUT",
+        "POST"
+      ],
+      "Application Admin": [
+        "PUT",
+        "POST"
+      ],
+      "PROD Group": [
+        "PUT",
+        "POST"
+      ],
+      "QA Group": [
+        "PUT",
+        "POST"
+      ],
+      "SSO Verified": [
+        "PUT",
+        "POST"
+      ],
+      "SSO Bypass Detected": [
+        "PUT",
+        "POST"
+      ],
+      "MFA Verified": [
+        "PUT",
+        "POST"
+      ],
+      "MFA Bypass Detected": [
+        "PUT",
+        "POST"
+      ],
+      "Security Assessment Inspector": [
+        "PUT",
+        "POST"
+      ],
+      "Parent Id": [
+        "PUT",
+        "POST"
+      ],
+      "Is Sub-Component": [
+        "PUT",
+        "POST"
+      ]
+    }
+  }
+}

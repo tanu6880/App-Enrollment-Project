@@ -1,0 +1,795 @@
+{
+	"info": {
+		"_postman_id": "07aa16e1-ee24-46ee-b887-1208cba79841",
+		"name": "App-Enrollment-Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29752762"
+	},
+	"item": [
+		{
+			"name": "App Bulk Upload By Data JSON",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "svc_iag_admin",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"type": "any"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "tenantId",
+						"value": "{{tenantId}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n        \"Application Identifier\": \"TANU01\",\r\n        \"Application Name\": \"CAMR-Tanu01\",\r\n        \"Application Type Name\": \"Finance Demo App Type\",\r\n        \"Description\": \"\",\r\n        \"Owner\": \"PBULE\",\r\n        \"enableIAPDataCollection\": true,\r\n        \"Application Lifecycle Status\":\"Enrolled\"\r\n    }\r\n]"
+				},
+				"url": {
+					"raw": "{{base_url}}/iamws/adc/v2/applications/{{appIdentifier}}/entities/bulk?outOfBandApprovalInfo=%7B%22mechanism%22%3A%22Email%22%2C%22approvalRequestInfo%22%3A%22Bulk%20Support%20Team%20Role%20Approval%20Dated%2012%2F21%2F2018%22%2C%22justification%22%3A%22security%20team%20approved%20over%20email%22%7D&extractedBy=PBULE&extractionTime=0&entityType={{IAP Entity Type Name}}&sourceSystemId=Migration%20Tool&system=Native&dataClass=Representational&selectedAttributes=false&selectedEntities=true",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"iamws",
+						"adc",
+						"v2",
+						"applications",
+						"{{appIdentifier}}",
+						"entities",
+						"bulk"
+					],
+					"query": [
+						{
+							"key": "outOfBandApprovalInfo",
+							"value": "%7B%22mechanism%22%3A%22Email%22%2C%22approvalRequestInfo%22%3A%22Bulk%20Support%20Team%20Role%20Approval%20Dated%2012%2F21%2F2018%22%2C%22justification%22%3A%22security%20team%20approved%20over%20email%22%7D"
+						},
+						{
+							"key": "extractedBy",
+							"value": "PBULE"
+						},
+						{
+							"key": "extractionTime",
+							"value": "0"
+						},
+						{
+							"key": "entityType",
+							"value": "{{IAP Entity Type Name}}"
+						},
+						{
+							"key": "sourceSystemId",
+							"value": "Migration%20Tool"
+						},
+						{
+							"key": "performApprovalInBulk",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "system",
+							"value": "Native"
+						},
+						{
+							"key": "dataClass",
+							"value": "Representational"
+						},
+						{
+							"key": "mode",
+							"value": "Offline",
+							"disabled": true
+						},
+						{
+							"key": "selectedAttributes",
+							"value": "false"
+						},
+						{
+							"key": "selectedEntities",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "App Bulk Upload By Data JSON",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "tenantId",
+								"value": "{{tenantId}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n        \"Application Identifier\": \"TANU01\",\r\n        \"Application Name\": \"CAMR-Tanu01\",\r\n        \"Application Type Name\": \"Finance Demo App Type\",\r\n        \"Description\": \"\",\r\n        \"Owner\": \"PBULE\",\r\n        \"enableIAPDataCollection\": true,\r\n        \"Application Lifecycle Status\":\"Enrolled\"\r\n    }\r\n]"
+						},
+						"url": {
+							"raw": "{{base_url}}/iamws/adc/v2/applications/{{appIdentifier}}/entities/bulk?outOfBandApprovalInfo=%7B%22mechanism%22%3A%22Email%22%2C%22approvalRequestInfo%22%3A%22Bulk%20Support%20Team%20Role%20Approval%20Dated%2012%2F21%2F2018%22%2C%22justification%22%3A%22security%20team%20approved%20over%20email%22%7D&extractedBy=PBULE&extractionTime=0&entityType={{IAP Entity Type Name}}&sourceSystemId=Migration%20Tool&system=Native&dataClass=Representational&selectedAttributes=false&selectedEntities=true",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"iamws",
+								"adc",
+								"v2",
+								"applications",
+								"{{appIdentifier}}",
+								"entities",
+								"bulk"
+							],
+							"query": [
+								{
+									"key": "outOfBandApprovalInfo",
+									"value": "%7B%22mechanism%22%3A%22Email%22%2C%22approvalRequestInfo%22%3A%22Bulk%20Support%20Team%20Role%20Approval%20Dated%2012%2F21%2F2018%22%2C%22justification%22%3A%22security%20team%20approved%20over%20email%22%7D"
+								},
+								{
+									"key": "extractedBy",
+									"value": "PBULE"
+								},
+								{
+									"key": "extractionTime",
+									"value": "0"
+								},
+								{
+									"key": "entityType",
+									"value": "{{IAP Entity Type Name}}"
+								},
+								{
+									"key": "sourceSystemId",
+									"value": "Migration%20Tool"
+								},
+								{
+									"key": "performApprovalInBulk",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "system",
+									"value": "Native"
+								},
+								{
+									"key": "dataClass",
+									"value": "Representational"
+								},
+								{
+									"key": "mode",
+									"value": "Offline",
+									"disabled": true
+								},
+								{
+									"key": "selectedAttributes",
+									"value": "false"
+								},
+								{
+									"key": "selectedEntities",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 02 Sep 2025 11:05:24 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "135"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Using-Nginx-Controller",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"schemas\": [\n        \"urn:confluxsys:params:scim:api:messages:2.0:AcceptedForProcessing\"\n    ],\n    \"stageId\": \"42644\",\n    \"status\": \"202\",\n    \"batchIds\": [\n        \"42875\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "App Bulk Upload By Data JSON AppType",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "svc_iag_admin",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"type": "any"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "tenantId",
+						"value": "{{tenantId}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"Application Type Name\": \"FinanceDemoApp1\",\r\n        \"Entity Types\": \"[{\\\"name\\\": \\\"Account\\\", \\\"category\\\": \\\"Account\\\", \\\"jsonSchema\\\": {\\\"$schema\\\": \\\"http://json-schema.org/draft-07/schema#\\\", \\\"title\\\": \\\"Account\\\", \\\"type\\\": \\\"object\\\", \\\"properties\\\": {...}, \\\"required\\\": [...]}]}\",\r\n        \"IAP\": \"{}\",\r\n        \"Sailpoint\": \"{\\\"Sailpoint Application Type Name\\\": \\\"FinanceDemoApp1\\\", \\\"Template\\\": \\\"Disconnected Finance Generic Template App Type\\\"}\",\r\n        \"Target System Category\": \"Business Application\"\r\n    }\r\n]"
+				},
+				"url": {
+					"raw": "{{base_url}}/iamws/adc/v2/applications/{{appIdentifier}}/entities/bulk?outOfBandApprovalInfo=%7B%22mechanism%22%3A%22Email%22%2C%22approvalRequestInfo%22%3A%22Bulk%20Support%20Team%20Role%20Approval%20Dated%2012%2F21%2F2018%22%2C%22justification%22%3A%22security%20team%20approved%20over%20email%22%7D&extractedBy=PBULE&extractionTime=0&entityType={{IAP Entity Type Name}}&sourceSystemId=Migration%20Tool&system=Native&dataClass=Representational&selectedAttributes=false&selectedEntities=true",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"iamws",
+						"adc",
+						"v2",
+						"applications",
+						"{{appIdentifier}}",
+						"entities",
+						"bulk"
+					],
+					"query": [
+						{
+							"key": "outOfBandApprovalInfo",
+							"value": "%7B%22mechanism%22%3A%22Email%22%2C%22approvalRequestInfo%22%3A%22Bulk%20Support%20Team%20Role%20Approval%20Dated%2012%2F21%2F2018%22%2C%22justification%22%3A%22security%20team%20approved%20over%20email%22%7D"
+						},
+						{
+							"key": "extractedBy",
+							"value": "PBULE"
+						},
+						{
+							"key": "extractionTime",
+							"value": "0"
+						},
+						{
+							"key": "entityType",
+							"value": "{{IAP Entity Type Name}}"
+						},
+						{
+							"key": "sourceSystemId",
+							"value": "Migration%20Tool"
+						},
+						{
+							"key": "performApprovalInBulk",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "system",
+							"value": "Native"
+						},
+						{
+							"key": "dataClass",
+							"value": "Representational"
+						},
+						{
+							"key": "mode",
+							"value": "Offline",
+							"disabled": true
+						},
+						{
+							"key": "selectedAttributes",
+							"value": "false"
+						},
+						{
+							"key": "selectedEntities",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "App Bulk Upload By Data JSON AppType",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "tenantId",
+								"value": "{{tenantId}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"Application Type Name\": \"FinanceDemoApp1\",\r\n        \"Entity Types\": \"[{\\\"name\\\": \\\"Account\\\", \\\"category\\\": \\\"Account\\\", \\\"jsonSchema\\\": {\\\"$schema\\\": \\\"http://json-schema.org/draft-07/schema#\\\", \\\"title\\\": \\\"Account\\\", \\\"type\\\": \\\"object\\\", \\\"properties\\\": {...}, \\\"required\\\": [...]}]}\",\r\n        \"IAP\": \"{}\",\r\n        \"Sailpoint\": \"{\\\"Sailpoint Application Type Name\\\": \\\"FinanceDemoApp1\\\", \\\"Template\\\": \\\"Disconnected Finance Generic Template App Type\\\"}\",\r\n        \"Target System Category\": \"Business Application\"\r\n    }\r\n]"
+						},
+						"url": {
+							"raw": "{{base_url}}/iamws/adc/v2/applications/{{appIdentifier}}/entities/bulk?outOfBandApprovalInfo=%7B%22mechanism%22%3A%22Email%22%2C%22approvalRequestInfo%22%3A%22Bulk%20Support%20Team%20Role%20Approval%20Dated%2012%2F21%2F2018%22%2C%22justification%22%3A%22security%20team%20approved%20over%20email%22%7D&extractedBy=PBULE&extractionTime=0&entityType={{IAP Entity Type Name}}&sourceSystemId=Migration%20Tool&system=Native&dataClass=Representational&selectedAttributes=false&selectedEntities=true",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"iamws",
+								"adc",
+								"v2",
+								"applications",
+								"{{appIdentifier}}",
+								"entities",
+								"bulk"
+							],
+							"query": [
+								{
+									"key": "outOfBandApprovalInfo",
+									"value": "%7B%22mechanism%22%3A%22Email%22%2C%22approvalRequestInfo%22%3A%22Bulk%20Support%20Team%20Role%20Approval%20Dated%2012%2F21%2F2018%22%2C%22justification%22%3A%22security%20team%20approved%20over%20email%22%7D"
+								},
+								{
+									"key": "extractedBy",
+									"value": "PBULE"
+								},
+								{
+									"key": "extractionTime",
+									"value": "0"
+								},
+								{
+									"key": "entityType",
+									"value": "{{IAP Entity Type Name}}"
+								},
+								{
+									"key": "sourceSystemId",
+									"value": "Migration%20Tool"
+								},
+								{
+									"key": "performApprovalInBulk",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "system",
+									"value": "Native"
+								},
+								{
+									"key": "dataClass",
+									"value": "Representational"
+								},
+								{
+									"key": "mode",
+									"value": "Offline",
+									"disabled": true
+								},
+								{
+									"key": "selectedAttributes",
+									"value": "false"
+								},
+								{
+									"key": "selectedEntities",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 02 Sep 2025 11:05:58 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "135"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Using-Nginx-Controller",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"schemas\": [\n        \"urn:confluxsys:params:scim:api:messages:2.0:AcceptedForProcessing\"\n    ],\n    \"stageId\": \"42645\",\n    \"status\": \"202\",\n    \"batchIds\": [\n        \"42876\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Lookup schema conf from LLM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"model\": \"llama3.2\",\r\n  \"stream\": false,\r\n  \"messages\": [\r\n    {\r\n      \"role\": \"user\",\r\n      \"content\": \"Create application config from the following data\",\r\n      \"tool_calls\": []\r\n    }\r\n  ],\r\n  \"tools\": [\r\n    {\r\n      \"type\": \"function\",\r\n      \"function\": {\r\n        \"name\": \"create_app_config\",\r\n        \"description\": \"Generate app configuration JSON\",\r\n        \"parameters\": {\r\n          \"type\": \"object\",\r\n          \"properties\": {\r\n            \"Application Name\": { \"type\": \"string\" },\r\n            \"Application Identifier\": { \"type\": \"string\" },\r\n            \"Application Type Name\": { \"type\": \"string\" },\r\n            \"$nativeTenantName\": { \"type\": \"string\" },\r\n            \"enableIAPDataCollection\": { \"type\": \"boolean\" },\r\n            \"Application Status\": { \"type\": \"string\" }\r\n          },\r\n          \"required\": [\r\n            \"Application Name\",\r\n            \"Application Identifier\",\r\n            \"Application Type Name\",\r\n            \"$nativeTenantName\",\r\n            \"enableIAPDataCollection\",\r\n            \"Application Status\"\r\n          ]\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"type\": \"function\",\r\n      \"function\": {\r\n        \"name\": \"create_app_type_config\",\r\n        \"description\": \"Generate application type configuration JSON\",\r\n        \"parameters\": {\r\n          \"type\": \"object\",\r\n          \"properties\": {\r\n            \"Application Type Name\": { \"type\": \"string\" },\r\n            \"Target System Category\": { \"type\": \"string\" },\r\n            \"Description\": { \"type\": \"string\" },\r\n            \"Entity Types\": {\r\n              \"type\": \"array\",\r\n              \"items\": {\r\n                \"type\": \"object\",\r\n                \"properties\": {\r\n                  \"Entity Type Name\": { \"type\": \"string\" },\r\n                  \"Category\": { \"type\": \"string\" },\r\n                  \"Schema\": { \"type\": \"object\" }\r\n                },\r\n                \"required\": [\"Entity Type Name\", \"Category\", \"Schema\"]\r\n              }\r\n            }\r\n          },\r\n          \"required\": [\r\n            \"Application Type Name\",\r\n            \"Target System Category\",\r\n            \"Entity Types\"\r\n          ]\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/generate",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"generate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"model\": \"llama3.2\",\r\n  \"messages\": [\r\n    {\r\n      \"role\": \"user\",\r\n      \"content\": \"Onboard the following application:\\n\\n{\\n  \\\"Application Identifier\\\": \\\"TANU01\\\",\\n  \\\"Application Name\\\": \\\"CAMR-Tanu01\\\",\\n  \\\"Application Type Name\\\": \\\"AppplicationTanuType\\\",\\n  \\\"EntityType\\\": [\\\"Account\\\", \\\"Entitlement\\\"],\\n  \\\"Owner\\\": \\\"PBULE\\\"\\n}\"\r\n    }\r\n  ],\r\n  \"stream\": false,\r\n  \"tools\": [\r\n    {\r\n      \"type\": \"function\",\r\n      \"function\": {\r\n        \"name\": \"create_app_config\",\r\n        \"description\": \"Generate IAP App Onboarding Configuration JSON from raw CMDB data\",\r\n        \"parameters\": {\r\n          \"type\": \"object\",\r\n          \"properties\": {\r\n            \"Application Identifier\": { \"type\": \"string\" },\r\n            \"Application Name\": { \"type\": \"string\" },\r\n            \"Application Type Name\": { \"type\": \"string\" },\r\n            \"EntityType\": {\r\n              \"type\": \"array\",\r\n              \"items\": { \"type\": \"string\" }\r\n            },\r\n            \"Owner\": { \"type\": \"string\" }\r\n          },\r\n          \"required\": [\r\n            \"Application Identifier\",\r\n            \"Application Name\",\r\n            \"Application Type Name\",\r\n            \"EntityType\",\r\n            \"Owner\"\r\n          ]\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/chat",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"chat"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Sep 2025 06:23:06 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "536"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"model\": \"llama3.2\",\n    \"created_at\": \"2025-09-01T06:23:06.2584664Z\",\n    \"message\": {\n        \"role\": \"assistant\",\n        \"content\": \"\",\n        \"tool_calls\": [\n            {\n                \"function\": {\n                    \"name\": \"create_app_config\",\n                    \"arguments\": {\n                        \"Application Identifier\": \"TANU01\",\n                        \"Application Name\": \"CAMR-Tanu01\",\n                        \"Application Type Name\": \"AppplicationTanuType\",\n                        \"EntityType\": [\n                            \"Account\",\n                            \"Entitlement\"\n                        ],\n                        \"Owner\": \"PBULE\"\n                    }\n                }\n            }\n        ]\n    },\n    \"done_reason\": \"stop\",\n    \"done\": true,\n    \"total_duration\": 5326806600,\n    \"load_duration\": 165048700,\n    \"prompt_eval_count\": 282,\n    \"prompt_eval_duration\": 1140922400,\n    \"eval_count\": 62,\n    \"eval_duration\": 4018193300\n}"
+				}
+			]
+		},
+		{
+			"name": "LLM Integration Calling  API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/TanuSaini/Downloads/AppOnBoardingSample1.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/onboard",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"onboard"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "LLM Responce",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"model\": \"llama3.2\",\r\n  \"messages\": [\r\n    {\r\n      \"role\": \"user\",\r\n      \"content\": \"Onboard the following application:\\n\\n{\\n  \\\"Application Identifier\\\": \\\"TANU01\\\",\\n  \\\"Application Name\\\": \\\"CAMR-Tanu01\\\",\\n  \\\"Application Type Name\\\": \\\"AppplicationTanuType\\\",\\n  \\\"EntityType\\\": [\\\"Account\\\", \\\"Entitlement\\\"],\\n  \\\"Owner\\\": \\\"PBULE\\\"\\n}\"\r\n    }\r\n  ],\r\n  \"stream\": false,\r\n  \"tools\": [\r\n    {\r\n      \"type\": \"function\",\r\n      \"function\": {\r\n        \"name\": \"create_app_config\",\r\n        \"description\": \"Generate IAP App Onboarding Configuration JSON from raw CMDB data\",\r\n        \"parameters\": {\r\n          \"type\": \"object\",\r\n          \"properties\": {\r\n            \"Application Identifier\": { \"type\": \"string\" },\r\n            \"Application Name\": { \"type\": \"string\" },\r\n            \"Application Type Name\": { \"type\": \"string\" },\r\n            \"EntityType\": {\r\n              \"type\": \"array\",\r\n              \"items\": { \"type\": \"string\" }\r\n            },\r\n            \"Owner\": { \"type\": \"string\" }\r\n          },\r\n          \"required\": [\r\n            \"Application Identifier\",\r\n            \"Application Name\",\r\n            \"Application Type Name\",\r\n            \"EntityType\",\r\n            \"Owner\"\r\n          ]\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/chat",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"chat"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Sep 2025 06:23:06 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "536"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"model\": \"llama3.2\",\n    \"created_at\": \"2025-09-01T06:23:06.2584664Z\",\n    \"message\": {\n        \"role\": \"assistant\",\n        \"content\": \"\",\n        \"tool_calls\": [\n            {\n                \"function\": {\n                    \"name\": \"create_app_config\",\n                    \"arguments\": {\n                        \"Application Identifier\": \"TANU01\",\n                        \"Application Name\": \"CAMR-Tanu01\",\n                        \"Application Type Name\": \"AppplicationTanuType\",\n                        \"EntityType\": [\n                            \"Account\",\n                            \"Entitlement\"\n                        ],\n                        \"Owner\": \"PBULE\"\n                    }\n                }\n            }\n        ]\n    },\n    \"done_reason\": \"stop\",\n    \"done\": true,\n    \"total_duration\": 5326806600,\n    \"load_duration\": 165048700,\n    \"prompt_eval_count\": 282,\n    \"prompt_eval_duration\": 1140922400,\n    \"eval_count\": 62,\n    \"eval_duration\": 4018193300\n}"
+				},
+				{
+					"name": "AppType Sample",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/TanuSaini/Downloads/applicationSample.json",
+									"disabled": true
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/TanuSaini/Downloads/app_type_sample.json"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/onboard?entityType=Disconnected Application Type",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"onboard"
+							],
+							"query": [
+								{
+									"key": "entityType",
+									"value": "Disconnected Application Type"
+								},
+								{
+									"key": "entityType",
+									"value": "Business Application",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "date",
+							"value": "Mon, 08 Sep 2025 13:04:28 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "823"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"Application Type Name\": \"FinanceDemoApp1\",\n        \"Target System Category\": \"Business Application\",\n        \"Entity Types\": \"[{\\\"name\\\": \\\"Account\\\", \\\"category\\\": \\\"Account\\\", \\\"jsonSchema\\\": {\\\"$schema\\\": \\\"http://json-schema.org/draft-07/schema#\\\", \\\"title\\\": \\\"Account\\\", \\\"type\\\": \\\"object\\\", \\\"properties\\\": {\\\"Status\\\": {\\\"$extension\\\": {\\\"isStatus\\\": true}}, \\\"Account Id\\\": {\\\"$extension\\\": {\\\"isIdentifier\\\": true, \\\"isNativeId\\\": true}}, \\\"Groups\\\": {\\\"type\\\": \\\"array\\\", \\\"items\\\": [{\\\"type\\\": \\\"object\\\", \\\"properties\\\": {\\\"Group\\\": {\\\"$extension\\\": {\\\"isIdentifier\\\": true}}}]}, \\\"Account Login\\\": {\\\"$extension\\\": {\\\"isNameAttribute\\\": true}}, \\\"required\\\": [\\\"Account Id\\\", \\\"Account Login\\\"]}}}\",\n        \"Sailpoint\": {\n            \"Sailpoint Application Type Name\": \"FinanceDemoApp1\",\n            \"Template\": \"Disconnected Finance Generic Template App Type\"\n        }\n    }\n]"
+				},
+				{
+					"name": "Application Sample",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/TanuSaini/Downloads/applicationSample.json"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/TanuSaini/Downloads/app_type_sample.json",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/onboard?entityType=Business Application",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"onboard"
+							],
+							"query": [
+								{
+									"key": "entityType",
+									"value": "Business Application"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "date",
+							"value": "Mon, 08 Sep 2025 13:07:21 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "217"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"$nativeTenantName\": \"\",\n        \"Application Identifier\": \"TANU01\",\n        \"Application Name\": \"CAMR-Tanu01\",\n        \"Application Status\": \"Owner\",\n        \"Application Type Name\": \"Finance Demo App Type\",\n        \"Metadata\": \"{}\",\n        \"enableIAPDataCollection\": true\n    }\n]"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "appIdentifier",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

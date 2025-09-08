@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Disconnected Application Type",
+  "type": "object",
+  "properties": {
+    "Application Type Name": {
+      "type": "string",
+      "title": "Application Type Name",
+      "description": "Application Type Name value. This value will be used to create/overwrite application type in various Platforms",
+      "$extension": {
+        "isNativeId": true,
+        "isNameAttribute": true
+      }
+    },
+    "Target System Category": {
+      "type": "string",
+      "title": "Target System Category",
+      "description": "Category of the system whose data model is represented",
+      "enum": [
+        "Business Application",
+        "Platform"
+      ]
+    },
+    "Description": {
+      "type": "string",
+      "title": "Description",
+      "description": "User friendly text that describes the data model"
+    },
+    "Entity Types": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Entity Type Name",
+              "description": "Name of entity type which will be created in various Platforms. Ex. Account, Groups",
+              "minLength": 1
+            },
+            "category": {
+              "type": "string",
+              "title": "Entity Category",
+              "description": "Entity Category to be used for the given Entity Type. Ex. Account=>Account, Groups=>Entitlement. So here Account and Entitlement are the category",
+              "minLength": 1
+            },
+            "jsonSchema": {
+              "type": "object",
+              "title": "Schema",
+              "description": "Entity Type Schema. Schema Must of compliant with Draft-07 version."
+            },
+            "Relationships": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "title": "Additional Relationships",
+              "description": "Additional Relationships specific to Subtypes.",
+              "patternProperties": {
+                ".*": {
+                  "type": "object",
+                  "title": "Relationship Name",
+                  "description": "Name of Relationship Configuration",
+                  "properties": {
+                    "Relationship Category": {
+                      "type": "string",
+                      "title": "Relationship Category",
+                      "description": "Name of relationship category"
+                    },
+                    "Related Entity Type Name": {
+                      "type": "string",
+                      "title": "Related Entity Type Name",
+                      "description": "Name of related entity type"
+                    },
+                    "Related Entity Application Id": {
+                      "type": "string",
+                      "title": "Related Entity Application Id",
+                      "description": "Application identifier of related entity"
+                    },
+                    "Related Entity Application Type": {
+                      "type": "string",
+                      "title": "Related Entity Application Type",
+                      "description": "Application Type of related entity"
+                    },
+                    "Matching Rule": {
+                      "type": "object",
+                      "title": "Matching Rule",
+                      "description": "Matching Rule Information represented in JSON Logic Form"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "Relationship Category",
+                    "Matching Rule"
+                  ]
+                }
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "Entity Type Name",
+            "Category",
+            "Schema"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "Application Type Name",
+    "Target System Category",
+    "Entity Types"
+  ]
+}

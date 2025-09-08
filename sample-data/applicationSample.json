@@ -1,0 +1,12 @@
+[
+  {
+    "Application Identifier": "TANU01",
+    "Application Name": "CAMR-Tanu01",
+    "Application Status": "Owner",
+    "Application Type Name": "Finance Demo App Type",
+    "Certification Definition": [],
+    "Description": "Finance Application for Demo",
+    "Owner": "PBULE",
+    "enableIAPDataCollection": true
+  }
+]

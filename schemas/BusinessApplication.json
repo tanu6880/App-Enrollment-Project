@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Business Application",
+  "type": "object",
+  "properties": {
+    "Application Name": {
+      "type": "string",
+      "title": "Application Name",
+      "description": "Name of the Application which is to be created",
+      "$extension": {
+        "isNameAttribute": true
+      }
+    },
+    "Application Type Name": {
+      "type": "string",
+      "title": "Application Type Name",
+      "description": "Type of the Application"
+    },
+    "Application Identifier": {
+      "type": "string",
+      "title": "Application Identifier",
+      "description": "Unique Identifier for Application",
+      "$extension": {
+        "isNativeId": true
+      }
+    },
+    "$nativeTenantName": {
+      "type": "string",
+      "title": "Org Unit Name",
+      "description": "Org or Org Unit tenant name"
+    },
+    "enableIAPDataCollection": {
+      "type": "boolean",
+      "title": "enableIAPDataCollection",
+      "description": "Flag that determines whether IAP data collection is enabled for the Application. When set to true, IAP will automatically generate and update Application entities in the system based on collected metadata. If set to false, data collection is disabled and no new Application entities will be created or updated in IAP.",
+      "$extension": {
+        "presentation": {
+          "isModifiable": true
+        }
+      }
+    },
+    "Application Status": {
+      "type": "string",
+      "title": "Application Status",
+      "description": "Application status of the Application in the organization.",
+      "$extension": {
+        "isStatus": true,
+        "presentation": {
+          "isModifiable": false
+        }
+      }
+    },
+    "Metadata": {
+      "type": "object",
+      "properties": {
+        "Description": {
+          "type": "string",
+          "title": "Description",
+          "description": "Details/Short Description of Application"
+        },
+        "Application CAMR ID": {
+          "type": "string",
+          "title": "Description",
+          "description": "Application CAMR ID"
+        },
+        "Application Type": {
+          "type": "string",
+          "title": "Description",
+          "description": "Application Is Requestable? or not"
+        }
+      }
+    }
+  },
+  "required": [
+    "Application Name",
+    "Application Identifier",
+    "Application Status"
+  ]
+}

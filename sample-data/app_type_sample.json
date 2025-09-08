@@ -1,0 +1,71 @@
+[
+  {
+    "Application Identifier": "FinanceDemoApp1",
+    "Application Type Name": "FinanceDemoApp1",
+    "Target System Category": "Business Application",
+    "Entity Types": [
+      {
+        "name": "Account",
+        "category": "Account",
+        "jsonSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "title": "Account",
+          "type": "object",
+          "properties": {
+            "Status": {
+              "description": "Attribute to represent the status of account.",
+              "$extension": {
+                "isStatus": true
+              },
+              "title": "Status",
+              "type": "string"
+            },
+            "Account Id": {
+              "description": "Account id, it must be a unique value.",
+              "$extension": {
+                "isIdentifier": true,
+                "isNativeId": true
+              },
+              "type": "string",
+              "title": "Account ID"
+            },
+            "Groups": {
+              "description": "Groups which are associated with the give account",
+              "type": "array",
+              "title": "Groups",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "Group": {
+                      "$extension": {
+                        "isIdentifier": true
+                      },
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
+            },
+            "Account Login": {
+              "description": "account login attribute.",
+              "$extension": {
+                "isNameAttribute": true
+              },
+              "type": "string",
+              "title": "Account Login"
+            }
+          },
+          "required": [
+            "Account Id",
+            "Account Login"
+          ]
+        }
+      }
+    ],
+    "Sailpoint": {
+      "Sailpoint Application Type Name": "FinanceDemoApp1",
+      "Template": "Disconnected Finance Generic Template App Type"
+    }
+  }
+]
